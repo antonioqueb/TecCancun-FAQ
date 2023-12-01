@@ -1,11 +1,10 @@
-# Paso 1: Construir la imagen base con Node
-FROM node:latest as build-stage
+# Construir la imagen base con Node
+FROM node:latest
 
 # Establecer el directorio de trabajo en el contenedor
 WORKDIR /app
 
-# Copiar los archivos de configuración de tu proyecto
-# Estos incluyen package.json y yarn.lock o package-lock.json
+# Copiar los archivos de configuración del proyecto (package.json, etc.)
 COPY package*.json ./
 
 # Instalar las dependencias del proyecto
@@ -15,10 +14,10 @@ RUN npm install
 COPY . .
 
 # Construir la aplicación para producción
-RUN npm run build  
+RUN npm run build
 
-# Exponer el puerto 80 para acceder a la aplicación
-EXPOSE 80
+# Exponer el puerto que tu aplicación utiliza
+EXPOSE 3000
 
-# Comando para iniciar Nginx y servir la aplicación
-CMD ["nginx", "-g", "daemon off;"]
+# Comando para iniciar la aplicación
+CMD ["node", "server.js"]
