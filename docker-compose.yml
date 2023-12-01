@@ -4,6 +4,6 @@ services:
   react-app:
     build: .
     ports:
-      - '8080:80'
+      - '80:80'
     environment:
       - NODE_ENV=production
