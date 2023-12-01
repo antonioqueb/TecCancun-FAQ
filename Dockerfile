@@ -17,12 +17,6 @@ COPY . .
 # Construir la aplicación para producción
 RUN npm run build  
 
-# Paso 2: Preparar la imagen de producción con Nginx
-FROM nginx:stable-alpine as production-stage
-
-# Copiar el build de producción desde la etapa de construcción
-COPY --from=build-stage /app/dist /usr/share/nginx/html
-
 # Exponer el puerto 80 para acceder a la aplicación
 EXPOSE 80
 
