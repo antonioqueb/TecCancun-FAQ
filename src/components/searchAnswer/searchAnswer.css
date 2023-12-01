@@ -68,17 +68,22 @@
 
   .search input[type="text"], .search button[type="submit"] {
     padding: 12px;
-    width: 100%; /* Establece el ancho al 100% para ambos, input y botón */
+    width: 90%; /* Establece el ancho al 100% para ambos, input y botón */
     box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del ancho */
   }
 }
 
 @media screen and (max-width: 480px) {
   .search {
-    flex-direction: column; /* Cambia la disposición a columna en dispositivos muy pequeños */
+    flex-direction: flex; /* Cambia la disposición a columna en dispositivos muy pequeños */
+    border-radius: 5; /* Elimina los bordes redondeados para que se vean alineados */
+    width: 95%;
+
+
   }
 
   .search input[type="text"], .search button[type="submit"] {
-    border-radius: 0; /* Elimina los bordes redondeados para que se vean alineados */
+    border-radius: 18; /* Elimina los bordes redondeados para que se vean alineados */
+
   }
 }

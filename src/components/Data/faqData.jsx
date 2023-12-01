@@ -210,7 +210,7 @@
           "Proyecto Integral de Educación Dual",
           "Estancia",
           "Tesis o Tesina",
-          "Examen General de Egreso de la Licenciatura (EGEL del Ceneval",
+          "Examen General de Egreso de la Licenciatura (EGEL del Ceneval)",
         ]
         },
       ],

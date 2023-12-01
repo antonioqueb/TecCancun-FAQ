@@ -9,10 +9,25 @@ export default function SearchAnswer() {
     const [searchResults, setSearchResults] = useState([]);
     const [showModal, setShowModal] = useState(false);
 
-    const flattenedData = Object.values(faqData).flat(2);
+    // Modificación aquí: Aplanar los datos incluyendo subcategorías
+    let flattenedData = [];
+    Object.entries(faqData).forEach(([category, contents]) => {
+        if (Array.isArray(contents)) { // Maneja categorías sin subcategorías
+            contents.forEach(faq => {
+                flattenedData.push({ ...faq, categoria: category });
+            });
+        } else { // Maneja categorías con subcategorías
+            Object.entries(contents).forEach(([subCategoria, faqs]) => {
+                faqs.forEach(faq => {
+                    flattenedData.push({ ...faq, categoria: category, subCategoria });
+                });
+            });
+        }
+    });
 
+    // Ajustar Fuse.js para incluir categoría y subcategoría en la búsqueda
     const fuse = new Fuse(flattenedData, {
-        keys: ['pregunta', 'respuesta'],
+        keys: ['pregunta', 'respuesta', 'categoria', 'subCategoria'], // Incluye 'subCategoria'
         includeScore: true,
         threshold: 0.4
     });
@@ -23,7 +38,7 @@ export default function SearchAnswer() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (searchTerm.trim()) { // Asegurarse de que searchTerm no esté vacío
+        if (searchTerm.trim()) {
             const results = fuse.search(searchTerm).map(result => result.item);
             setSearchResults(results);
             setShowModal(true);
@@ -39,7 +54,7 @@ export default function SearchAnswer() {
                     value={searchTerm} 
                     onChange={handleSearch}
                 />
-                <button type="submit" disabled={!searchTerm.trim()}>Buscar</button> {/* Botón deshabilitado si searchTerm está vacío */}
+                <button type="submit" disabled={!searchTerm.trim()}>Buscar</button>
             </form>
             {showModal && 
                 <AnswerModal 

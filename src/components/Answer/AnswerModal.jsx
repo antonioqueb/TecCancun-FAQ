@@ -15,9 +15,10 @@ function AnswerModal({ searchResults, onClose }) {
     // Contenido cuando hay resultados
     const resultsContent = hasResults ? (
         <div>
-            <strong>Pregunta: </strong>{searchResults[0].pregunta}
+            <strong>{searchResults[0].pregunta}</strong>
             <br />
-            <strong>Respuesta: </strong>{searchResults[0].respuesta}
+            <br />
+            {searchResults[0].respuesta}
         </div>
     ) : noResultsContent;
 

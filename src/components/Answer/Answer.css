@@ -1,36 +1,97 @@
+/* Estilos base para el modal */
 .modal {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: #1B396A;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    width: 100%;
 }
 
 .modal-content {
-    background-color: rgb(12, 60, 111);
+    background-color: #1B396A;
     color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 5px;
-    max-width: 1200px;
+    max-width: 700px;
+    font-size: 1.5em;
     width: 100%;
     position: relative;
 }
 
 .close {
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 5px;
+    right: 25px;
     font-size: 1.5em;
     cursor: pointer;
     color: #fff;
+    margin: 0.5em 0.5em 0 0;
 }
 
 .modal-results {
     max-height: 80vh;
     overflow-y: auto;
+    border: 1px solid white;
+    border-radius: 13px;
+    padding: 1.5em;
+}
+
+/* Estilos para teléfonos móviles (pantallas menores a 600px) */
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 15px;
+        font-size: 1.2em;
+    }
+
+    .close {
+        font-size: 1.2em;
+        top: 2px;
+        right: 15px;
+    }
+
+    .modal-results {
+        padding: 1em;
+    }
+}
+
+/* Estilos para tabletas (pantallas entre 600px y 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .modal-content {
+        padding: 18px;
+        font-size: 1.3em;
+    }
+
+    .close {
+        font-size: 1.3em;
+        top: 3px;
+        right: 20px;
+    }
+
+    .modal-results {
+        padding: 1.2em;
+    }
+}
+
+/* Estilos para laptops y desktops (pantallas mayores a 1024px) */
+@media (min-width: 1025px) {
+    .modal-content {
+        padding: 20px;
+        font-size: 1.5em;
+    }
+
+    .close {
+        font-size: 1.5em;
+        top: 5px;
+        right: 25px;
+    }
+
+    .modal-results {
+        padding: 1.5em;
+    }
 }

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './CategoryReadMore.css';
 import faqData from './../Data/faqData';
-import NavBar from './../NavBar/NavBar';
 
 export default function CategoryReadMore({ category, onClose }) {
     const [visibleItems, setVisibleItems] = useState(3);
@@ -25,9 +24,8 @@ export default function CategoryReadMore({ category, onClose }) {
 
     const renderItem = (item, index) => (
         <li key={index}>
-            <strong>Pregunta: </strong>{item.pregunta}
+            <strong>{item.pregunta}</strong>
             <br />
-            <strong>Respuesta: </strong>
             {renderAnswer(item.respuesta)}
         </li>
     );
@@ -51,14 +49,16 @@ export default function CategoryReadMore({ category, onClose }) {
         <div className="category-read-more">
             <div className="category-read-more-content">
                 <h2>{category.name}</h2>
-                <p>{category.description}</p>
+                <br/>
                 {renderCategoryData()}
-                {isExpandable && (
-                    visibleItems < (Array.isArray(categoryData) ? categoryData.length : Object.values(categoryData).flat().length) ?
-                    <button onClick={showMore}>Ver más</button> :
-                    <button onClick={showLess}>Ver menos</button>
-                )}
-                <button onClick={onClose}>Cerrar</button>
+                <div className="button-container">
+                    {isExpandable && (
+                        visibleItems < (Array.isArray(categoryData) ? categoryData.length : Object.values(categoryData).flat().length) ?
+                        <button onClick={showMore}>Ver más</button> :
+                        <button onClick={showLess}>Ver menos</button>
+                    )}
+                    <button onClick={onClose}>Cerrar</button>
+                </div>
             </div>
         </div>
     );

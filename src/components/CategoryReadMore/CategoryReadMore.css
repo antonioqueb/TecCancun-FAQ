@@ -1,74 +1,177 @@
 /* Estilo para el contenedor principal */
 .category-read-more {
-    position: fixed; /* Posicionamiento fijo en la pantalla */
-    top: 0; /* Inicia en la parte superior */
-    left: 0; /* Inicia en el lado izquierdo */
-    width: 100%; /* Ocupa todo el ancho de la pantalla */
-    height: 100%; /* Ocupa toda la altura de la pantalla */
-    background-color: rgba(255, 255, 255, 1); /* Fondo blanco con un poco de transparencia */
-    overflow-y: auto; /* Permite el desplazamiento si el contenido es muy largo */
-    z-index: 1000; /* Asegura que se coloque sobre otros elementos */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1B396A;
+    overflow: hidden;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 2vw;
 }
 
-/* Estilo para el contenido interno */
 .category-read-more-content {
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 800px; /* Ancho máximo para el contenido */
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 80vw;
+    max-width: 60rem;
+    background-color: #1B396A;
+    overflow-y: auto;
+    padding: 1rem;
+    font-size: 1.7rem;
 }
+
 .subcategory {
-    color:#333
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
 }
 
-/* Estilo para el título */
 .category-read-more-content h2 {
-    color: #333; /* Color oscuro para el texto */
-    margin-bottom: 10px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 1rem;
 }
 
-/* Estilo para los párrafos */
 .category-read-more-content p {
-    color: #666; /* Color gris para el texto */
-    font-size: 16px;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 
-/* Estilo para la lista */
 .category-read-more-content ul {
-    list-style: none; /* Elimina los bullets de la lista */
+    list-style: none;
     padding: 0;
-    color: #333;
-
+    color: rgb(255, 255, 255);
 }
 
-/* Estilo para los elementos de la lista */
 .category-read-more-content li {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: white; /* Fondo blanco para los elementos */
-    border: 1px solid #ddd; /* Borde ligero */
-    border-radius: 4px; /* Bordes redondeados */
-    color: #333;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #1B396A;
+    border: 1px solid #ddd;
+    border-radius: 0.55rem;
 }
 
-/* Estilo para los botones */
 .category-read-more button {
-    background-color: #007bff; /* Color azul para el botón */
-    color: white; /* Texto blanco */
+    background-color: #1B396A;
+    color: #ffffff;
     border: none;
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    font-size: 1.5rem;
+    margin: 0.25rem;
     cursor: pointer;
-    border-radius: 4px; /* Bordes redondeados para el botón */
-    transition: background-color 0.3s ease; /* Transición suave para el hover */
+    border-radius: 0.55rem;
+    transition: background-color 0.3s ease;
+    border: 1px solid #ddd
+    
 }
 
 .category-read-more button:hover {
-    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+    background-color: #1B396A;
+    color: #ffffff;
+}
+
+.button-container {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+
+/* ... otros estilos ... */
+
+/* Estilos para teléfonos móviles (pantallas menores a 600px) */
+@media (max-width: 600px) {
+    .category-read-more {
+        padding: 4vh 0 4vh;
+    }
+
+    .category-read-more-content {
+        height: 90vh;
+        width: 90vw;
+        font-size: 1.4rem;
+    }
+
+    .subcategory {
+        font-size: 1.2rem;
+    }
+
+    .category-read-more-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .category-read-more-content p {
+        font-size: 0.9rem;
+    }
+
+    .category-read-more button {
+        font-size: 1.2rem;
+    }
+}
+
+/* Estilos para tabletas (pantallas entre 600px y 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .category-read-more {
+        padding: 3vh 3vw;
+    }
+
+    .category-read-more-content {
+        height: 85vh;
+        width: 85vw;
+        font-size: 1.5rem;
+    }
+
+    .subcategory {
+        font-size: 1.3rem;
+    }
+
+    .category-read-more-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .category-read-more-content p {
+        font-size: 1rem;
+    }
+
+    .category-read-more button {
+        font-size: 1.3rem;
+    }
+}
+
+/* Estilos para laptops y desktops (pantallas mayores a 1024px) */
+@media (min-width: 1025px) {
+    .category-read-more {
+        padding: 2vh 2vw;
+    }
+
+    .category-read-more-content {
+        height: 80vh;
+        width: 80vw;
+        font-size: 1.7rem;
+    }
+
+    .subcategory {
+        font-size: 1.5rem;
+    }
+
+    .category-read-more-content h2 {
+        font-size: 1.7rem;
+    }
+
+    .category-read-more-content p {
+        font-size: 1.1rem;
+    }
+
+    .category-read-more button {
+        font-size: 1.5rem;
+    }
 }
