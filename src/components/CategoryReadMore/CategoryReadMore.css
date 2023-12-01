@@ -1,4 +1,3 @@
-/* Estilo para el contenedor principal */
 .category-read-more {
     position: fixed;
     top: 0;
@@ -87,9 +86,6 @@
 }
 
 
-/* ... otros estilos ... */
-
-/* Estilos para teléfonos móviles (pantallas menores a 600px) */
 @media (max-width: 600px) {
     .category-read-more {
         padding: 4vh 0 4vh;
@@ -118,7 +114,6 @@
     }
 }
 
-/* Estilos para tabletas (pantallas entre 600px y 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
     .category-read-more {
         padding: 3vh 3vw;
@@ -147,7 +142,6 @@
     }
 }
 
-/* Estilos para laptops y desktops (pantallas mayores a 1024px) */
 @media (min-width: 1025px) {
     .category-read-more {
         padding: 2vh 2vw;

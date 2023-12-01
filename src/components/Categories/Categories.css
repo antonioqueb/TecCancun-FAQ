@@ -65,17 +65,16 @@
 .show-more-button {
     padding: 10px 20px;
     margin: 20px auto;
-    display: block; /* Centrar el botón */
-    background-color: #ffffff; /* Color de fondo del botón */
-    color: #262626; /* Color del texto */
-    border: none;
+    display: block; 
+    background-color: #ffffff; 
+    color: #262626; 
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
 }
 
 .show-more-button:hover {
-    background-color: #1B396A; /* Color más oscuro para el efecto hover */
+    background-color: #1B396A; 
     color: #ffffff;
     box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.859);
     transform: scaleX(1.1);
