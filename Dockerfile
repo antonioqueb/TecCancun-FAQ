@@ -1,24 +1,30 @@
-# Dockerfile para la aplicación React
+# Paso 1: Construir la imagen base con Node
+FROM node:latest as build-stage
 
-FROM node:16-alpine
-
-# Crea un directorio para la aplicación
+# Establecer el directorio de trabajo en el contenedor
 WORKDIR /app
 
-# Copia los archivos de la aplicación
+# Copiar los archivos de configuración de tu proyecto
+# Estos incluyen package.json y yarn.lock o package-lock.json
 COPY package*.json ./
 
-# Instala las dependencias
+# Instalar las dependencias del proyecto
 RUN npm install
 
-# Copia el resto de los archivos de la aplicación
-COPY ./ ./
+# Copiar el resto del código fuente del proyecto
+COPY . .
 
-# Construye la aplicación
-RUN npm run build
+# Construir la aplicación para producción
+RUN npm run build  
 
-# Expone el puerto 3000
+# Paso 2: Preparar la imagen de producción con Nginx
+FROM nginx:stable-alpine as production-stage
+
+# Copiar el build de producción desde la etapa de construcción
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+
+# Exponer el puerto 80 para acceder a la aplicación
 EXPOSE 80
 
-# Comando para iniciar la aplicación
-CMD ["npm", "run", "serve"]
+# Comando para iniciar Nginx y servir la aplicación
+CMD ["nginx", "-g", "daemon off;"]
