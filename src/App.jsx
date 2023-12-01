@@ -1,6 +1,6 @@
 import './App.css'
-import NavBar from './components/navBar/navBar'
-import Title from './components/title/title'
+import NavBar from './components/NavBar/NavBar'
+import Title from './components/Title/Title'
 import SearchAnswer from './components/searchAnswer/searchAnswer'
 import Categories from './components/Categories/Categories'
 
