@@ -7,7 +7,6 @@ WORKDIR /app
 # Copiar los archivos de configuración de tu proyecto
 # Estos incluyen package.json y yarn.lock o package-lock.json
 COPY package*.json ./
-COPY yarn.lock ./
 
 # Instalar las dependencias del proyecto
 RUN yarn install
