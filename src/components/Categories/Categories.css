@@ -1,0 +1,112 @@
+.container-category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* Ajusta el espacio entre las tarjetas */
+    padding: 20px; /* Ajusta el padding del contenedor si es necesario */
+    margin: auto;
+    max-width: calc(300px * 4 + 20px * 2); /* Ancho de 3 tarjetas más el espacio entre ellas */
+}
+
+.card {
+    position: relative;
+    width: 300px; /* Ancho fijo de las tarjetas */
+    height: 160px; /* Altura fija de las tarjetas */
+    background-color: #ffffffc0;
+    border-radius: 10px;
+    padding: 2em 1.2em;
+    margin-bottom: 20px; /* Espacio adicional en la parte inferior de cada tarjeta */
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Opcional: sombra para dar profundidad */
+}
+
+.card-title {
+    color: #262626;
+    font-size: 1.5em;
+    line-height: normal;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.small-desc {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #452c2c;
+    margin-bottom: 1em; /* Ajusta según sea necesario */
+}
+
+.go-corner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    background: linear-gradient(105deg, #b7b6b6, #1B396A);
+    border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+    margin-top: -4px;
+    margin-right: -4px;
+    color: white;
+    font-family: courier, sans;
+}
+
+/* Estilo para el botón 'Mostrar más' */
+.show-more-button {
+    padding: 10px 20px;
+    margin: 20px auto;
+    display: block; /* Centrar el botón */
+    background-color: #ffffff; /* Color de fondo del botón */
+    color: #262626; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.show-more-button:hover {
+    background-color: #1B396A; /* Color más oscuro para el efecto hover */
+    color: #ffffff;
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.859);
+    transform: scaleX(1.1);
+}
+
+/* Estilos para la animación del hover en las tarjetas */
+.card:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.857), rgb(0, 0, 0));
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.35s ease-out;
+}
+
+.card:hover:before {
+    transform: scale(28);
+}
+
+.card:hover .small-desc {
+    transition: all 0.5s ease-out;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.card:hover .card-title {
+    transition: all 0.5s ease-out;
+    color: #ffffff;
+}

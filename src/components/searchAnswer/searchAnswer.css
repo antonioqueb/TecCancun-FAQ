@@ -1,0 +1,84 @@
+.container-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
+  margin-bottom: 2%;
+}
+
+.search {
+  display: flex;
+  position: relative;
+  width: 100%; /* Este será el ancho en dispositivos mayores a 768px */
+  max-width: 1061px; /* Ajustar según el diseño para dispositivos mayores */
+}
+
+.search input[type="text"] {
+  flex-grow: 1;
+  padding: 15px;
+  border: none;
+  font-size: 1em;
+  font-weight: bold; /* Aumenta el grosor del texto */
+  background-color: rgba(32, 28, 28, 0.288); 
+  backdrop-filter: blur(3px);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-right: 0;
+}
+
+.search input[type="text"]::placeholder {
+  color: rgba(204, 204, 204, 0.568); /* Cambia este valor para ajustar el color del placeholder */
+}
+.search input[type="text"]:focus {
+  outline: 1px solid white; /* Contorno sólido blanco */
+  outline-offset: -2px; /* Desplaza el contorno hacia adentro */
+}
+
+
+
+
+
+
+.search button[type="submit"] {
+  padding: 15px 20px;
+  border: none;
+  background-color: #ffffff;
+  font-size: 1.2em;
+  color: rgb(38, 38, 38);
+  cursor: pointer;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search button[type="submit"]:hover {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0  1px rgba(255, 255, 255, 0.859);
+}
+
+/* Estilos para dispositivos móviles */
+
+
+@media screen and (max-width: 768px) {
+  .search {
+    width: 100%; /* Asegura que el contenedor de búsqueda use todo el ancho disponible */
+  }
+
+  .search input[type="text"], .search button[type="submit"] {
+    padding: 12px;
+    width: 100%; /* Establece el ancho al 100% para ambos, input y botón */
+    box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del ancho */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search {
+    flex-direction: column; /* Cambia la disposición a columna en dispositivos muy pequeños */
+  }
+
+  .search input[type="text"], .search button[type="submit"] {
+    border-radius: 0; /* Elimina los bordes redondeados para que se vean alineados */
+  }
+}

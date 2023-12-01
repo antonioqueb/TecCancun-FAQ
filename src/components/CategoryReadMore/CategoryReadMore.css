@@ -1,0 +1,74 @@
+/* Estilo para el contenedor principal */
+.category-read-more {
+    position: fixed; /* Posicionamiento fijo en la pantalla */
+    top: 0; /* Inicia en la parte superior */
+    left: 0; /* Inicia en el lado izquierdo */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    height: 100%; /* Ocupa toda la altura de la pantalla */
+    background-color: rgba(255, 255, 255, 1); /* Fondo blanco con un poco de transparencia */
+    overflow-y: auto; /* Permite el desplazamiento si el contenido es muy largo */
+    z-index: 1000; /* Asegura que se coloque sobre otros elementos */
+}
+
+/* Estilo para el contenido interno */
+.category-read-more-content {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px; /* Ancho máximo para el contenido */
+    height: auto;
+}
+.subcategory {
+    color:#333
+}
+
+/* Estilo para el título */
+.category-read-more-content h2 {
+    color: #333; /* Color oscuro para el texto */
+    margin-bottom: 10px;
+}
+
+/* Estilo para los párrafos */
+.category-read-more-content p {
+    color: #666; /* Color gris para el texto */
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Estilo para la lista */
+.category-read-more-content ul {
+    list-style: none; /* Elimina los bullets de la lista */
+    padding: 0;
+    color: #333;
+
+}
+
+/* Estilo para los elementos de la lista */
+.category-read-more-content li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white; /* Fondo blanco para los elementos */
+    border: 1px solid #ddd; /* Borde ligero */
+    border-radius: 4px; /* Bordes redondeados */
+    color: #333;
+}
+
+/* Estilo para los botones */
+.category-read-more button {
+    background-color: #007bff; /* Color azul para el botón */
+    color: white; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px; /* Bordes redondeados para el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el hover */
+}
+
+.category-read-more button:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+}
