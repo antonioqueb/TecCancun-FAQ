@@ -1,4 +1,5 @@
 
+
 # TecCancun-FAQ
 ![Captura de Pantalla 2023-11-30 a la(s) 20 58 47](https://github.com/antonioqueb/TecCancun-FAQ/assets/92013606/457a941a-20df-436d-9847-8f6577779b67)
 
@@ -48,3 +49,14 @@ R: La documentación de la API está disponible en [Enlace de Documentación].
 **P: ¿Cómo reporto un error o sugiero una nueva característica?**
 
 R: Puedes reportar errores o sugerir características a través de nuestro sistema de issues en GitHub. Por favor, proporciona detalles claros y pasos para reproducir cualquier error.
+
+## Despliegue en Docker
+
+Para desplegar la aplicación en un contenedor Docker, sigue estos pasos:
+
+1. Asegúrate de tener Docker y Docker Compose instalados en tu sistema.
+2. Coloca el `Dockerfile` y el archivo `docker-compose.yml` en la raíz del proyecto. Puedes encontrar las instrucciones detalladas para estos archivos en la sección de documentación de Docker del repositorio.
+3. Ejecuta el comando `docker-compose up -d --build` en tu terminal. Esto construirá y ejecutará la imagen Docker de la aplicación en modo desasociado (detached), permitiendo que el contenedor se ejecute en segundo plano.
+4. Una vez que el contenedor esté en funcionamiento, accede a la aplicación a través de `http://localhost` en tu navegador.
+
+Con estos pasos, podrás desplegar y ejecutar la aplicación TecCancun-FAQ en un entorno de contenedor Docker sin bloquear tu terminal, permitiendo que continúes trabajando en otras tareas.
